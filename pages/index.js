@@ -1,23 +1,13 @@
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
-import Widget from '../src/components/Widget'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackground'
-
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex:1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+import Widget from '../src/components/Widget';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizBackground from '../src/components/QuizBackground';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -31,6 +21,9 @@ const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -40,7 +33,24 @@ export default function Home() {
             <h1>The Legend of Zelda</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>A lenda do zelda</p>
+            <form onSubmit={(event) => {
+              event.preventDefault();
+
+              router.push(`/quiz?name=${name}`);
+            }}
+            >
+              <input
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                placeholder="Diz ai seu nome"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {' '}
+                {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -49,10 +59,9 @@ export default function Home() {
             <p>A lenda do zelda</p>
           </Widget.Content>
         </Widget>
-        <Footer></Footer>
+        <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/castrors" />
     </QuizBackground>
   );
-
 }
