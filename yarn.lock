@@ -182,7 +182,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.2", "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
   integrity sha1-2yixxDaKJZtgqXMR1qlS1P0BrBo=
@@ -2209,6 +2209,24 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+framer-motion@^3.2.2-rc.1:
+  version "3.2.2-rc.1"
+  resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/framer-motion/-/framer-motion-3.2.2-rc.1.tgz#8fb334484505f01b6b9fc2ce6a770bd71507e53d"
+  integrity sha1-j7M0SEUF8Btrn8LOancL1xUH5T0=
+  dependencies:
+    framesync "^5.0.0"
+    hey-listen "^1.0.8"
+    popmotion "^9.1.0"
+    style-value-types "^4.0.1"
+    tslib "^1.10.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
+framesync@5.0.0, framesync@^5.0.0:
+  version "5.0.0"
+  resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/framesync/-/framesync-5.0.0.tgz#7de8caedf53ac441118e79680f1beb7391c328b6"
+  integrity sha1-fejK7fU6xEERjnloDxvrc5HDKLY=
+
 from2@^2.1.0:
   version "2.3.0"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/from2/-/from2-2.3.0.tgz#8bfb5502bde4a4d36cfdeea007fcca21d7e382af"
@@ -2426,6 +2444,11 @@ he@1.2.0:
   version "1.2.0"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
+
+hey-listen@^1.0.8:
+  version "1.0.8"
+  resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/hey-listen/-/hey-listen-1.0.8.tgz#8e59561ff724908de1aa924ed6ecc84a56a9aa68"
+  integrity sha1-jllWH/ckkI3hqpJO1uzISlapqmg=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -3698,6 +3721,16 @@ pnp-webpack-plugin@1.6.4:
   dependencies:
     ts-pnp "^1.1.6"
 
+popmotion@^9.1.0:
+  version "9.1.0"
+  resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/popmotion/-/popmotion-9.1.0.tgz#4360d06bd18ce8baa8f9284ecec7d55344af6325"
+  integrity sha1-Q2DQa9GM6Lqo+ShOzsfVU0SvYyU=
+  dependencies:
+    framesync "5.0.0"
+    hey-listen "^1.0.8"
+    style-value-types "^4.0.1"
+    tslib "^1.10.0"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -4688,6 +4721,14 @@ style-loader@1.2.1:
     loader-utils "^2.0.0"
     schema-utils "^2.6.6"
 
+style-value-types@^4.0.1:
+  version "4.0.1"
+  resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/style-value-types/-/style-value-types-4.0.1.tgz#23f05dd03e8a850654defc22cf03ebac572aaa00"
+  integrity sha1-I/Bd0D6KhQZU3vwizwPrrFcqqgA=
+  dependencies:
+    hey-listen "^1.0.8"
+    tslib "^1.10.0"
+
 styled-components@^5.0.0:
   version "5.2.1"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/styled-components/-/styled-components-5.2.1.tgz#6ed7fad2dc233825f64c719ffbdedd84ad79101a"
@@ -4912,7 +4953,7 @@ tsconfig-paths@^3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.9.0:
+tslib@^1.10.0, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://artifactory.avira.org/artifactory/api/npm/idp_npm/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
